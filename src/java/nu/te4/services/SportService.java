@@ -119,7 +119,7 @@ public class SportService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getTeam(@PathParam("id") int id){
          JsonObject data = sportsBean.getTeam(id);
-        
+   
         if(data == null){
             return Response.serverError().build();
         }
