@@ -36,9 +36,9 @@ public class User {
             data.next();
             String hashedPass = data.getString("password");
             connection.close();
-            if (BCrypt.checkpw(password, hashedPass)) {
-                return true;
-            }
+            
+            return BCrypt.checkpw(password, hashedPass);
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
